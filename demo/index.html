@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 	<head>
-		<title>Jquery Anchor Menu</title>
-		<meta charset="UTF-8" />
+		<title>jQuery Anchor Menu demo</title>
+		<meta charset="utf-8" />
 		<meta name="viewport" content="width = device-width" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
 		<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+
 		<script src="../src/anchorMenu.js"></script>
 	</head>
 	<body>
@@ -24,17 +25,18 @@
 			</div>
 		</nav>
 
-		<header class="bg-light shadow-sm pt-5">
-			<h1 class="container py-5">Jquery Anchor Menu</h1>
+		<header class="bg-dark text-light shadow-sm text-center pt-5">
+			<h1 class="container py-5">jQuery Anchor Menu</h1>
 		</header>
 
-		<section id="info" class="container my-5 p-4 shadow">
-			<h2>Info</h2>
+		<section id="info" class="container my-5 p-4 shadow rounded-2">
+			<h2>Basic usage with padding</h2>
 			<p>
 				<code>$("#menu").anchorMenu({padding: "#nav-top"});</code>
 			</p>
 		</section>
-		<section id="link-1" class="container my-5 p-4 shadow">
+
+		<section id="link-1" class="container my-5 p-4 shadow rounded-2">
 			<h2>Link 1</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a est neque. Proin faucibus purus eget quam tincidunt dignissim. Duis ultricies ultrices nisi tristique dignissim. Etiam eget diam ac tortor posuere tempor a in augue. Suspendisse sodales accumsan neque, eu sodales eros mollis ac. Pellentesque vel pharetra dui. Sed in urna fermentum, posuere ex nec, sodales ex. Maecenas quis tempus lectus. Suspendisse potenti. Morbi ac erat a felis feugiat interdum. Cras ultrices fermentum porttitor. Phasellus mauris justo, egestas quis elit a, tempus rutrum justo.</p>
 			<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam pulvinar pretium turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent eget quam eget mi laoreet aliquet a et mauris. Curabitur tortor velit, pretium et pulvinar id, imperdiet quis elit. Nam porta scelerisque nisl, a tempus arcu pretium et. Vivamus eleifend quam in porta rhoncus. Nulla dignissim vitae nulla sit amet fermentum. Sed bibendum consequat diam in aliquet. Pellentesque dictum finibus dolor in feugiat. Phasellus at finibus dolor. Pellentesque ac elementum ante, a aliquet lectus. Aliquam et ligula eu tortor consectetur accumsan a et lacus. Quisque a erat lectus. Curabitur facilisis rhoncus volutpat. Mauris non purus commodo elit faucibus porta eget ac ante.</p>
@@ -43,7 +45,7 @@
 			<p>Fusce et porttitor ante. Sed tempus dui non mauris elementum, vitae tempus nunc vestibulum. Quisque nec arcu orci. Nam id mollis diam, vel scelerisque nisi. Duis luctus, ex nec tempus rutrum, turpis massa posuere eros, id mollis neque urna vulputate diam. Sed augue diam, mollis cursus orci a, bibendum dapibus orci. Nulla consequat placerat elit. Nunc at efficitur purus, in faucibus nisi. Cras libero mauris, dictum et bibendum nec, varius nec velit. Maecenas a posuere purus. Maecenas ac semper dui. Nulla non mauris egestas lorem condimentum tincidunt ut eu nisl. Fusce molestie augue id mi semper sollicitudin sollicitudin non elit. Vivamus lectus augue, maximus vitae feugiat nec, dignissim et diam. Donec molestie massa id est consequat commodo. Proin pharetra iaculis nulla, in mattis ligula.</p>
 		</section>
 
-		<section id="link-2" class="container my-5 p-4 shadow">
+		<section id="link-2" class="container my-5 p-4 shadow rounded-2">
 			<h2>Link 2</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a est neque. Proin faucibus purus eget quam tincidunt dignissim. Duis ultricies ultrices nisi tristique dignissim. Etiam eget diam ac tortor posuere tempor a in augue. Suspendisse sodales accumsan neque, eu sodales eros mollis ac. Pellentesque vel pharetra dui. Sed in urna fermentum, posuere ex nec, sodales ex. Maecenas quis tempus lectus. Suspendisse potenti. Morbi ac erat a felis feugiat interdum. Cras ultrices fermentum porttitor. Phasellus mauris justo, egestas quis elit a, tempus rutrum justo.</p>
 			<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam pulvinar pretium turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent eget quam eget mi laoreet aliquet a et mauris. Curabitur tortor velit, pretium et pulvinar id, imperdiet quis elit. Nam porta scelerisque nisl, a tempus arcu pretium et. Vivamus eleifend quam in porta rhoncus. Nulla dignissim vitae nulla sit amet fermentum. Sed bibendum consequat diam in aliquet. Pellentesque dictum finibus dolor in feugiat. Phasellus at finibus dolor. Pellentesque ac elementum ante, a aliquet lectus. Aliquam et ligula eu tortor consectetur accumsan a et lacus. Quisque a erat lectus. Curabitur facilisis rhoncus volutpat. Mauris non purus commodo elit faucibus porta eget ac ante.</p>
@@ -54,7 +56,7 @@
 			<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam pulvinar pretium turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent eget quam eget mi laoreet aliquet a et mauris. Curabitur tortor velit, pretium et pulvinar id, imperdiet quis elit. Nam porta scelerisque nisl, a tempus arcu pretium et. Vivamus eleifend quam in porta rhoncus. Nulla dignissim vitae nulla sit amet fermentum. Sed bibendum consequat diam in aliquet. Pellentesque dictum finibus dolor in feugiat. Phasellus at finibus dolor. Pellentesque ac elementum ante, a aliquet lectus. Aliquam et ligula eu tortor consectetur accumsan a et lacus. Quisque a erat lectus. Curabitur facilisis rhoncus volutpat. Mauris non purus commodo elit faucibus porta eget ac ante.</p>
 		</section>
 
-		<section id="link-3" class="container my-5 p-4 shadow">
+		<section id="link-3" class="container my-5 p-4 shadow rounded-2">
 			<h2>Link 3</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum a est neque. Proin faucibus purus eget quam tincidunt dignissim. Duis ultricies ultrices nisi tristique dignissim. Etiam eget diam ac tortor posuere tempor a in augue. Suspendisse sodales accumsan neque, eu sodales eros mollis ac. Pellentesque vel pharetra dui. Sed in urna fermentum, posuere ex nec, sodales ex. Maecenas quis tempus lectus. Suspendisse potenti. Morbi ac erat a felis feugiat interdum. Cras ultrices fermentum porttitor. Phasellus mauris justo, egestas quis elit a, tempus rutrum justo.</p>
 			<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam pulvinar pretium turpis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent eget quam eget mi laoreet aliquet a et mauris. Curabitur tortor velit, pretium et pulvinar id, imperdiet quis elit. Nam porta scelerisque nisl, a tempus arcu pretium et. Vivamus eleifend quam in porta rhoncus. Nulla dignissim vitae nulla sit amet fermentum. Sed bibendum consequat diam in aliquet. Pellentesque dictum finibus dolor in feugiat. Phasellus at finibus dolor. Pellentesque ac elementum ante, a aliquet lectus. Aliquam et ligula eu tortor consectetur accumsan a et lacus. Quisque a erat lectus. Curabitur facilisis rhoncus volutpat. Mauris non purus commodo elit faucibus porta eget ac ante.</p>

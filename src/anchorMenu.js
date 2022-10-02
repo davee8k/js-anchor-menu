@@ -1,8 +1,8 @@
 /**
- * Jquery Anchor Menu for single pages
+ * jQuery Anchor Menu for single pages
  *
  * @author DaVee8k
- * @version 0.3.1
+ * @version 0.3.2
  * @license WTFNMFPL 1.0
  */
 (function ($) {
@@ -20,7 +20,14 @@
 		this.isActive = false;
 		this.list = {};
 
-		this.scrollTo = function (ident, elmLink, checkout) {
+		/**
+		 * Scroll to selcted element
+		 * @param {String} ident
+		 * @param {DOMelement} elmLink
+		 * @param {Boolean} checkout
+		 * @param {Boolean} jump
+		 */
+		this.scrollTo = function (ident, elmLink, checkout, jump) {
 			this.isActive = true;
 			var posFrom = $(window).scrollTop();
 			var posTo = this.getPosition(ident);
@@ -28,7 +35,7 @@
 
 			$("html, body").stop(true).animate(
 				{scrollTop: posTo + 'px'},
-				Math.round(Math.abs(posFrom - posTo) * this.speed), this.easing,
+				jump === true ? 10 : Math.round(Math.abs(posFrom - posTo) * this.speed), this.easing,
 				function () {
 					if (self.isActive === true && elmLink !== undefined) {
 						self.setActive(elmLink, true);
@@ -41,6 +48,11 @@
 			);
 		};
 
+		/**
+		 * Set active item in menu
+		 * @param {DOMelement} elmLink
+		 * @param {Boolean} history
+		 */
 		this.setActive = function (elmLink, history) {
 			this.active = elmLink;
 			if (this.activeClass) {
@@ -51,6 +63,10 @@
 			if (history && !this.isActive) this.setHistory(elmLink);
 		};
 
+		/**
+		 * Add link to browser history
+		 * @param {DOMelement} elmLink
+		 */
 		this.setHistory = function (elmLink) {
 			if (typeof history.pushState !== "undefined") history.pushState({}, document.title, $(elmLink).prop("href"));
 			else this.historyIE = $(elmLink)[0];
@@ -58,8 +74,8 @@
 
 		/**
 		 * Return possible hashes from current url
-		 * @param {element} elmLink
-		 * @returns {hash}
+		 * @param {DOMelement} elmLink
+		 * @returns {String}
 		 */
 		this.getExistingHash = function (elmLink) {
 			var mask = /\/index.php($|\/)/i;
@@ -73,6 +89,10 @@
 			return link.hash === false ? '' : link.hash;
 		};
 
+		/**
+		 * Get top (floating menu) space
+		 * @returns {Number}
+		 */
 		this.getPadding = function () {
 			if (this.padding) {
 				if (parseInt(this.padding) === this.padding) {
@@ -85,10 +105,21 @@
 			return 0;
 		};
 
+		/**
+		 * Returns selected element position
+		 * @param {String} ident
+		 * @returns {Number}
+		 */
 		this.getPosition = function (ident) {
 			return ident && $(ident).length !== 0 ? Math.round($(ident).offset().top - this.getPadding()) : 0;
 		};
 
+		/**
+		 * Tries to find item from menu based on hash in clicked link
+		 * @param {Event} e
+		 * @param {DOMelement} elmLink
+		 * @returns {Boolean}
+		 */
 		this.clickEvent = function (e, elmLink) {
 			var hash = this.getExistingHash(elmLink);
 
@@ -103,6 +134,9 @@
 			return true;
 		};
 
+		/**
+		 * Check actual position on page to update active item in menu
+		 */
 		this.scrollEvent = function () {
 			var showed = false;
 			var posShowed = 0;
@@ -126,6 +160,10 @@
 			if (showed && showed !== this.active) this.setActive(showed, false);
 		};
 
+		/**
+		 * Add scroll action to additional elements
+		 * @param {String} elm
+		 */
 		this.loadInclude = function (elm) {
 			$(elm).find("a").each( function () {
 				var hash = self.getExistingHash(this);
@@ -138,6 +176,9 @@
 			});
 		};
 
+		/**
+		 * Add scroll action to items in menu
+		 */
 		this.load = function () {
 			this.list = $(this).find((this.parentElm ? this.parentElm + ' ' : '') + "a");
 			if (this.list.length !== 0) {
@@ -164,7 +205,7 @@
 		}
 
 		if (anchor.length > 0) {
-			this.scrollTo(anchor);
+			this.scrollTo(anchor, undefined, false, true);
 		}
 	};
 }(jQuery));
