@@ -4,6 +4,10 @@
 
 Adds scrolling to menu anchors and adds/removes the active class to clicked menu items.
 
+## Browser support
+
+Internet Explorer 8 and (almost) anything newer ;)
+
 ## Options
 
 Name        | Type       | Default    | Description
