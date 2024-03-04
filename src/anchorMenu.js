@@ -2,8 +2,8 @@
  * jQuery Anchor Menu for single pages
  *
  * @author DaVee8k
- * @version 0.3.2
- * @license WTFNMFPL 1.0
+ * @version 0.4.0
+ * @license https://unlicense.org/
  */
 (function ($) {
 	$.fn.anchorMenu = function (option) {
@@ -16,6 +16,7 @@
 		this.speed = option['speed'] !== undefined ? option['speed'] : 1;
 		this.padding = option['padding'] !== undefined ? option['padding'] : 0;
 		this.include = option['include'] !== undefined ? option['include'] : [];
+		this.checkBox = option['checkBox'] !== undefined ? option['checkBox'] : false;
 		this.active = false;
 		this.isActive = false;
 		this.list = {};
@@ -124,7 +125,12 @@
 			var hash = this.getExistingHash(elmLink);
 
 			if (hash !== false) {
-				if (hash !== window.location.hash || (this.historyIE !== false && hash !== this.historyIE.hash)) {
+				if (this.checkBox !== false) {
+					if ($(this.checkBox).is(":checked")) {
+						$(this.checkBox).click();
+					}
+				}
+				if (hash !== window.location.hash || (hash === '' && $(window).scrollTop() > 1) || (this.historyIE !== false && hash !== this.historyIE.hash)) {
 					e.preventDefault();
 					this.scrollTo(hash, elmLink, true);
 					this.setHistory(elmLink);
@@ -145,7 +151,6 @@
 
 			this.list.each( function () {
 				var ident = self.getExistingHash(this);
-
 				if (ident && $(ident).length !== 0) {
 					var posElm = Math.round($(ident).offset().top);
 					if (posCurrent >= posElm) {
@@ -154,6 +159,9 @@
 							showed = this;
 						}
 					}
+				}
+				else {
+					if (showed === false) showed = this;
 				}
 			});
 
